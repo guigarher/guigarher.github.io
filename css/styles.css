@@ -1,20 +1,33 @@
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4c74af, #75d5eb);
+    color: #333;
+}
+
 header{
     text-align: center;
-    background: linear-gradient(to right, #4c74af, #75d5eb);
-    color: white;
+    padding: 1rem 0;
 }
 
 nav ul li{
     display: inline;
     margin-right: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    padding: 2rem;
+    padding: 4rem;
 }
 
 .card {
