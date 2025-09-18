@@ -8,8 +8,11 @@ body {
 }
 
 header{
+    margin: 20px;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem;
+    border: #182333 5px double;
+    border-radius: 16px;
 }
 
 nav ul li{
