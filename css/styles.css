@@ -8,11 +8,10 @@ body {
 }
 
 header{
-    margin: 20px;
-    text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-align: end;
     padding: 1rem;
-    border: #182333 5px double;
-    border-radius: 16px;
 }
 
 nav ul li{
@@ -24,6 +23,7 @@ nav ul li{
 
 a{
     text-decoration: none;
+    color: #fff;
 }
 
 .grid {
@@ -46,4 +46,11 @@ a{
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+#sobre-mi {
+    text-align: center;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 12px;
 }
