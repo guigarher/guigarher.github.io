@@ -1,56 +1,146 @@
+* { 
+    box-sizing: border-box;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #4c74af, #75d5eb);
-    color: #333;
+    background: linear-gradient(to bottom, #05153b,#102f80 50%,#071538);
 }
 
-header{
-    background-color: #333;
-    color: #fff;
-    text-align: end;
-    padding: 1rem;
+.hero {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-nav ul li{
-    display: inline;
-    margin-right: 20px;
-    font-weight: bold;
-    text-decoration: none;
+.hero-card{
+    color: #e5e7eb;
+    background: #0b1220;
+    border: 1px solid #e7eaf0;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    padding: 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.hero-text { 
+    flex: 1 1 0; 
+}
+
+.hero-image { 
+    flex: 0 0 320px;
+    max-width: 320px; 
+    border: 1px solid #e7eaf0;
+    border-radius: 12px;
+}
+
+.hero h1 { 
+    margin: 0 0 .5rem; 
+}
+
+.hero p { 
+    margin: 0; 
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.areas {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.area {
+  background: #fff;
+  border: 1px solid #e7eaf0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  padding: 1.25rem;
+  text-align: center;
 }
 
 a{
     text-decoration: none;
-    color: #fff;
+    color: inherit;
+}
+#barista {
+  background: url("../img/cafe.jpg") center/cover no-repeat;
+  color: bisque;
+  text-align: center;
+  position: relative;
 }
 
-.grid {
-    background: linear-gradient(to right, #4c74af, #75d5eb);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
+#barista::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: inherit;
 }
 
-.card {
-    
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 1.5rem;
+#barista * {
+  position: relative; 
+}
+
+#d {
+  background: url("../img/GameBoy.png") center/cover no-repeat;
+  color: yellowgreen;
+  text-align: center;
+  position: relative;
+}
+
+#d::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: inherit;
+}
+
+#d * {
+  position: relative;
+}
+
+#web {
+  background: url("../img/web.jpg") center/cover no-repeat;
+  color: rgb(153, 225, 238);
+  text-align: center;
+  position: relative;
+}
+
+#web::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  border-radius: inherit;
+}
+
+#web * {
+  position: relative;
+}
+
+footer {
     text-align: center;
-    transition: all 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+    padding: 1rem;
+    color: #e5e7eb;
+    font-size: .875rem;
+    background-color: #05153b;
 }
 
-#sobre-mi {
-    text-align: center;
-    margin: 2rem;
-    padding: 1rem;
-    border-radius: 12px;
+@media (max-width: 800px) {
+  .hero-card { flex-direction: column; }
 }
