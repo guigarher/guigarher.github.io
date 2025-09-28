@@ -148,6 +148,13 @@ footer {
     background-color: #020c22;
 }
 
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: .5rem;
+}
+
 @media (max-width: 800px) {
   .hero-card { flex-direction: column; }
 }
