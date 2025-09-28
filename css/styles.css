@@ -79,10 +79,6 @@ main {
   text-align: center;
 }
 
-a{
-    text-decoration: none;
-    color: inherit;
-}
 #barista {
   background: url("../img/cafe.jpg") center/cover no-repeat;
   color: bisque;
@@ -148,11 +144,87 @@ footer {
     background-color: #020c22;
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
+img.icon, svg.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
   vertical-align: middle;
+  flex: 0 0 24px;   /* por si están dentro de un contenedor flex */
+}
+
+/* separa icono y texto */
+a > img.icon, a > svg.icon { 
   margin-right: .5rem;
+}
+
+/* Estado base (transiciones preparadas) */
+.area{
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  will-change: transform, box-shadow, filter;
+}
+
+/* Glow + escala suave */
+.area:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.35),
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 24px rgba(96,165,250,.25); /* toquecito de azul */
+}
+
+/* Si la tarjeta usa overlay (::before), acláralo al pasar el ratón
+   para que parezca que la imagen “ilumina” */
+#barista::before,
+#d::before,
+#web::before{
+  transition: background .25s ease, opacity .25s ease;
+}
+
+#barista:hover::before,
+#d:hover::before,
+#web:hover::before{
+  background: rgba(0,0,0,0.45); /* menos oscuro = se ve más la foto */
+  opacity: 1;
+}
+
+/* Enlaces dentro de .area: estilo base */
+.area a{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: #60a5fa;                 /* azul acento */
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+
+/* Subrayado animado con pseudo-elemento */
+.area a::after{
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 100%; height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  opacity: .9;
+}
+
+/* Iconos: que no crezcan, alineados */
+.area a .icon{
+  width: 20px; height: 20px;
+  flex: 0 0 20px;
+  vertical-align: middle;
+}
+
+/* Efecto hover */
+.area a:hover{
+  color: #93c5fd;                 /* un pelín más claro */
+  transform: translateY(-1px);
+}
+.area a:hover::after{
+  transform: scaleX(1);
 }
 
 @media (max-width: 800px) {
