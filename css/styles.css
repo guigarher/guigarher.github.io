@@ -6,12 +6,19 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background: linear-gradient(to bottom, #05153b,#102f80 50%,#071538);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 .hero {
     max-width: 1100px;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 5rem 1rem;
 }
 
 .hero-card{
@@ -138,7 +145,7 @@ footer {
     padding: 1rem;
     color: #e5e7eb;
     font-size: .875rem;
-    background-color: #05153b;
+    background-color: #020c22;
 }
 
 @media (max-width: 800px) {
